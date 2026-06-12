@@ -1,13 +1,14 @@
 body {
-	font-family: Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
 	font-size: 13px;
 	line-height: 18px;
 	color: #515076;
+	background-image: url("images/dandelions.png");
+  background-repeat: no-repeat;
 
 }
 
 .title {
-	margin-left: 400px;
 	font-size: 70px;
 	line-height: 78px;
 	margin:0%;
@@ -25,29 +26,34 @@ body {
 }
 
 .product-list {
+	display: flex;
 	margin:0px;
 	padding:0px;
 	list-style: none;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .product-card {
+	display: flex;
+	flex-direction: column;
 	box-sizing: border-box;
 	background: #F7F7FA;
-	max-width: 340px;
-	max-height: 573px;
+	width: 340px;
+	height: 573px;
 	margin: 45px;
 	padding: 25px;
 	
 }
 
-.discription {
+.description {
 	font-weight: 200;
 
 	
 }
 
 .product {
-	font-weight: 20;	
+	font-weight: 400;	
 	font-size: 20px;
 	margin-top: 3%;
 
@@ -55,17 +61,19 @@ body {
 
 }
 
-.prise {
+.price {
+	display: flex;
+	justify-content: space-between;
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 64px;
-	margin-top: 55px;
+	margin-top: auto;
 	color: #515076;
 }
 
 .rub {
+  float: right;
 	font-size: 20px;
 	line-height: 64px;
 	color: #515076;
-	margin-left: 170px;
 }
