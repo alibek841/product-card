@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,13 @@
 <body>
   <main class="page">
     <h1 class="page__title">Выбери свой продукт</h1>
+    <div class="buttons">
+      <button id="change_color_btn_card">изменить цвет карточки</button>
+      <button id="change_colors_btn_cards_all">изменить цвет всех карточек</button>
+      <button id="open_Google">открыть Google</button>
+      <button id="output_console_log">вывод консоль лог</button>
+      <button id="changeButtonColor">Изменить цвет кнопки</button>
+    </div>
     <ul class="cards">
       <li class="cards__item">
         <article class="card">
@@ -25,7 +33,7 @@
           <span class="card__subtitle">Состав:</span>
           <ul class="card__compound_list">
             <li class="card__compound_item">активные натуральные комплексы</li>
-            <li class="card__compound_item">витамины С, А, РР, В И Е</li>
+            <li class="card__compound_tem">витамины С, А, РР, В И Е</li>
             <li class="card__compound_item">солнцезащитные компоненты</li>
           </ul>
           <div class="card__price_row">
@@ -94,7 +102,8 @@
 
       <li class="cards__item">
         <article class="card">
-          <img class="card__image" src="images/cream&gel&mask&mousse.jpg" alt="товар крем,гель,мусс и маска" width="290">
+          <img class="card__image" src="images/cream&gel&mask&mousse.jpg" alt="товар крем,гель,мусс и маска"
+            width="290">
           <span class="card__category">для нормальной кожи</span>
           <h2 class="card__title">Подарочный набор №5</h2>
           <p class="card__description">Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.</p>
@@ -112,5 +121,7 @@
       </li>
     </ul>
   </main>
+  <script src="main.js"></script>
 </body>
+
 </html>

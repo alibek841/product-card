@@ -110,3 +110,17 @@ body {
   display: block;
   margin-bottom: 15px;
 }
+
+
+.button--active {
+  background-color: rgb(205, 197, 206);
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
