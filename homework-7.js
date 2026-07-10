@@ -7,12 +7,12 @@ function showWeather(city, temperature) {
 showWeather('Хасавюрт', 30);
 
 
-const speedOfLight = 299792458;
+const SPEEDOFLIGHT = 299792458;
 
 function checkSpeed(speed) {
-  if (speed > speedOfLight) {
+  if (speed > SPEEDOFLIGHT) {
     console.log('Сверхсветовая скорость');
-  } else if (speed < speedOfLight) {
+  } else if (speed < SPEEDOFLIGHT) {
     console.log('Субсветовая скорость');
   } else {
     console.log('Скорость света');
