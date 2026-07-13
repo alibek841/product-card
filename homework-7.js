@@ -43,6 +43,6 @@ function sayHello(name) {
 sayHello('Мухаммад');
 
 
-const car = 'Toyota';
+const myCar = 'Toyota';
 const year = 2022;
 const isWorking = true;
