@@ -142,7 +142,7 @@ console.log(allBooks);
 //  Добавление свойства isRare
 
 
-function addIsRare(booksArray) {
+function getRareBooks(booksArray) {
   return booksArray.map((book) => {
     return {
       ...book,
@@ -151,6 +151,6 @@ function addIsRare(booksArray) {
   });
 }
 
-const updatedBooks = addIsRare(allBooks);
+const updatedBooks = getRareBooks(allBooks);
 
 console.log(updatedBooks);
