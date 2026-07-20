@@ -3,8 +3,6 @@
 import { comments } from "./comments.js";
 console.log(comments);
 
-
-
 //  Создание массива из чисел от 1 до 10
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -12,16 +10,12 @@ console.log(numbers);
 const filteredNumbers = numbers.filter((number) => number >= 5);
 console.log(filteredNumbers);
 
-
-
 //  Создание массива строк
 
 const equipment = [ "сканер", "мотортестер", "контролька", "мультиметр", "эндоскоп" ];
 console.log(equipment.includes("мультиметр"));
 
-
-
-//  Создание функции, которая переворачивает массив
+//  Создание функции, которая переворачивает массив 
 
 function reverseArray(array){
   return array.reverse()
@@ -31,9 +25,6 @@ reverseArray(equipment);
 console.log(numbers);
 console.log(equipment);
 
-
-
-
 //  Комментарии, почта которых содержит ".com"
 
 const commentsWithCom = comments.filter((comment) =>
@@ -41,8 +32,6 @@ const commentsWithCom = comments.filter((comment) =>
 );
 
 console.log(commentsWithCom);
-
-
 
 //  Если id <= 5, то postId = 2, иначе postId = 1
 
@@ -55,8 +44,6 @@ const updatedComments = comments.map((comment) => {
 
 console.log(updatedComments);
 
-
-
 //  Оставить только id и name
 
 const commentsIdAndName = comments.map((comment) => {
@@ -67,8 +54,6 @@ const commentsIdAndName = comments.map((comment) => {
 });
 
 console.log(commentsIdAndName);
-
-
 
 //  Добавить свойство isInvalid
 
@@ -81,31 +66,27 @@ const commentsWithValidation = comments.map((comment) => {
 
 console.log(commentsWithValidation);
 
-
-
 //  Получить массив почт с помощью reduce
-const emailsReduce = comments.reduce((result, comment) => {
+const emailsByReduce = comments.reduce((result, comment) => {
   result.push(comment.email);
   return result;
 }, []);
 
-console.log(emailsReduce);
+console.log(emailsByReduce);
 
 // То же самое с помощью map
-const emailsMap = comments.map((comment) => comment.email);
+const emailsByMap = comments.map((comment) => comment.email);
 
-console.log(emailsMap);
-
-
+console.log(emailsByMap);
 
 //  Превратить массив в строку
 
 // С помощью toString()
-const emailsString = emailsMap.toString();
-console.log(emailsString);
+const emailsByToString = emailsByMap.toString();
+console.log(emailsByToString);
 
 // С помощью join()
-const emailsJoin = emailsMap.join(", ");
-console.log(emailsJoin);
+const emailsByJoin = emailsByMap.join(", ");
+console.log(emailsByJoin);
 
 
