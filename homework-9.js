@@ -82,8 +82,8 @@ console.log(emailsByMap);
 //  Превратить массив в строку
 
 // С помощью toString()
-const emailsByToString = emailsByMap.toString();
-console.log(emailsByToString);
+const emailsToString = emailsByMap.toString();
+console.log(emailsToString);
 
 // С помощью join()
 const emailsByJoin = emailsByMap.join(", ");
