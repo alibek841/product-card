@@ -7,8 +7,8 @@ const productDescriptions = products.reduce((result, product) => {
     [product.name]: product.description
   });
 
- return result;
-}, []);	
+  return result;
+}, []);
 
 console.log(productDescriptions);
 
@@ -43,21 +43,20 @@ function createCard(product) {
   cardClone.querySelector(".card__description").textContent = product.description;
 
   cardClone.querySelector(".card__price_value").textContent =
-  `${product.price.toLocaleString()} \u20BD`; 
+  `${product.price.toLocaleString()} \u20BD`;
 
-const compoundList = cardClone.querySelector(".card__compound_list");
+  const compoundList = cardClone.querySelector(".card__compound_list");
 
-product.compounds.forEach((compound) => {
-  const compoundItem = document.createElement("li");
+  product.compounds.forEach((compound) => {
+    const compoundItem = document.createElement("li");
 
-  compoundItem.classList.add("card__compound_item");
-  compoundItem.textContent = compound;
+    compoundItem.classList.add("card__compound_item");
+    compoundItem.textContent = compound;
 
-  compoundList.append(compoundItem);
-});
+    compoundList.append(compoundItem);
+  });
 
-return cardClone;
-
+  return cardClone;
 }
 
 //  Отобразить карточки
