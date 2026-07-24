@@ -45,3 +45,4 @@ export const products = [
     compounds: ["воски", "минералы", "масла"]
   }
 ];
+
