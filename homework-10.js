@@ -34,8 +34,8 @@ const cards = document.getElementById("cards");
 //  Создать карточку
 
 function createCard(product) {
-	const cardClone = cardTemplate.content.cloneNode(true);
-	cardClone.querySelector(".card__image").src = product.image;
+  const cardClone = cardTemplate.content.cloneNode(true);
+  cardClone.querySelector(".card__image").src = product.image;
   cardClone.querySelector(".card__image").alt = product.name;
 
   cardClone.querySelector(".card__category").textContent = product.category;
