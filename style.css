@@ -237,7 +237,7 @@ body {
 .footer__subscribe {
   display: flex;
   flex-direction: column;
-  align-items: center; /* центрирует всё внутри */
+  align-items: center; 
 }
 
 .footer__subscribe-text {
@@ -250,7 +250,7 @@ body {
 }
 
 .footer__form {
-  max-width: 500px; /* или больше */
+  max-width: 500px;
   width: 100%;
 }
 
@@ -354,9 +354,9 @@ body {
 }
 
 .footer__registration-button {
-  display: block; /* чтобы работал margin: 0 auto */
-  width: 200px; /* или 100% от родителя, но не больше */
-  margin: 12px auto 0; /* центрируем */
+  display: block; 
+  width: 200px; 
+  margin: 12px auto 0; 
   padding: 12px 20px;
   background: #FFFFFF;
   color: #000;
@@ -378,7 +378,7 @@ body {
 }
 
 .footer__social-link {
-  color: #ffffff; /* белый цвет */
+  color: #ffffff;
   font-size: 28px;
   transition: opacity 0.2s, transform 0.2s;
 }
