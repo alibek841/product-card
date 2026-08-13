@@ -371,27 +371,3 @@ body {
   color: #fff;
 }
 
-.footer__social {
-  display: flex;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.footer__social-link {
-  color: #ffffff;
-  font-size: 28px;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.footer__social-link:hover {
-  opacity: 0.8;
-  transform: scale(1.15);
-}
-.footer__social-link img {
-  filter: brightness(0) invert(1);
-  transition: filter 0.2s ease, transform 0.2s ease;
-}
-
-.footer__social-link:hover img {
-  transform: scale(1.15);
-}
