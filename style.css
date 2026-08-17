@@ -35,7 +35,7 @@ body {
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 0;
-  gap: 45px ;
+  gap: 45px;
   max-width: 1110px;
   list-style: none;
   justify-content: center;
@@ -79,7 +79,7 @@ body {
   font-weight: 700;
   font-size: 20px;
   margin: 0 0 12px;
-  color:#515076;
+  color: #515076;
 }
 
 .card__price_row {
@@ -105,17 +105,14 @@ body {
   color: #515076;
 }
 
-
 .card__image {
   display: block;
   margin-bottom: 15px;
 }
 
-
 .button--active {
   background-color: rgb(205, 197, 206);
 }
-
 
 .buttons {
   display: flex;
@@ -164,6 +161,7 @@ body {
   font-size: 24px;
   cursor: pointer;
 }
+
 .registration-form {
   display: flex;
   flex-direction: column;
@@ -195,20 +193,18 @@ body {
   cursor: pointer;
 }
 
-
 .footer {
   background-color: #3A3A3A;
   color: #ffffff;
-  padding: 40px 20px 20px;
+  padding: 40px 50px 20px;
   margin-top: 60px;
   font-family: "Montserrat", sans-serif;
 }
 
 .footer__container {
-  max-width: 1110px;
+  max-width: none;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
@@ -217,13 +213,13 @@ body {
 }
 
 .footer__info {
-  flex: 0 1 250px;
+  flex: 0 0 250px;
 }
 
 .footer__title {
   font-size: 24px;
   font-weight: 700;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   color: #ffffff;
 }
 
@@ -234,56 +230,107 @@ body {
   line-height: 1.5;
 }
 
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.icon-item svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-item:hover {
+  color: #6c63a0;
+}
+
 .footer__subscribe {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  flex: 0 1 500px;
 }
 
 .footer__subscribe-text {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 400;
+  margin: 0 0 12px;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 1.5;
   text-align: center;
 }
 
 .footer__form {
-  max-width: 500px;
-  width: 100%;
+  width: 320px;
+  max-width: 100%;
+}
+
+.footer__form-row {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .footer__form-input {
   flex: 1;
+  min-width: 0;
   border: none;
   padding: 10px 14px;
 }
 
 .footer__form-input:focus {
-  outline: 2px solid #6c63a0;
+  outline: none;
 }
 
 .footer__form-button {
   padding: 10px 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #000000;
   border: none;
   cursor: pointer;
 }
 
-
 .footer__form-button:hover {
   background-color: #5a528a;
+  color: #ffffff;
+}
+
+.footer__registration-button {
+  width: 200px;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #6c63a0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer__registration-button:hover {
+  background: #6c63a0;
+  color: #ffffff;
 }
 
 .footer__nav {
-  flex: 0 1 180px;
+  flex: 0 0 180px;
 }
 
 .footer__nav-title {
   font-size: 14px;
   font-weight: 700;
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
   color: #ffffff;
 }
 
@@ -318,24 +365,21 @@ body {
   max-width: 1110px;
   margin: 20px auto 0;
   text-align: center;
+  transform: translateX(30px);
   font-size: 13px;
   opacity: 0.6;
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px;
+  }
+
   .footer__container {
     flex-direction: column;
     align-items: stretch;
     gap: 30px;
   }
-
-	.footer__form-row {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-}
 
   .footer__info,
   .footer__subscribe,
@@ -343,30 +387,19 @@ body {
     flex: 1 1 auto;
   }
 
-  .footer__form {
-    flex-direction: column;
+  .footer__subscribe {
+    align-items: stretch;
   }
 
-  .footer__form-button {
+  .footer__subscribe-text {
+    text-align: center;
+  }
+
+  .footer__form-row {
     width: 100%;
   }
-}
 
-.footer__registration-button {
-  display: block; 
-  width: 200px; 
-  margin: 12px auto 0; 
-  padding: 12px 20px;
-  background: #FFFFFF;
-  color: #000;
-  border: 2px solid #6c63a0;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
+  .footer__registration-button {
+    align-self: center;
+  }
 }
-
-.footer__registration-button:hover {
-  background: #6c63a0;
-  color: #fff;
-}
-
