@@ -202,14 +202,13 @@ body {
 }
 
 .footer__container {
-  max-width: none;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
 }
 
 .footer__info {
@@ -226,34 +225,27 @@ body {
 .footer__description {
   font-size: 14px;
   opacity: 0.8;
-  margin: 0;
+  margin: 0 0 15px;
   line-height: 1.5;
 }
 
 .footer__social {
   display: flex;
-  align-items: center;
   gap: 18px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-.icon-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  color: #ffffff;
-  text-decoration: none;
+.footer__social-link {
+  display: inline-block;
 }
 
-.icon-item svg {
-  width: 18px;
-  height: 18px;
+.footer__social-link img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s;
 }
 
-.icon-item:hover {
-  color: #6c63a0;
+.footer__social-link:hover img {
+  transform: scale(1.15);
 }
 
 .footer__subscribe {
@@ -266,13 +258,12 @@ body {
 .footer__subscribe-text {
   margin: 0 0 12px;
   font-size: 14px;
-  line-height: 1.5;
   text-align: center;
 }
 
 .footer__form {
-  width: 320px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 450px;
 }
 
 .footer__form-row {
@@ -281,13 +272,15 @@ body {
   background: #ffffff;
   border-radius: 6px;
   overflow: hidden;
+  width: 100%;
 }
 
 .footer__form-input {
   flex: 1;
   min-width: 0;
   border: none;
-  padding: 10px 14px;
+  padding: 12px 16px;
+  font-size: 14px;
 }
 
 .footer__form-input:focus {
@@ -295,11 +288,13 @@ body {
 }
 
 .footer__form-button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #ffffff;
   color: #000000;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
+  font-weight: 600;
 }
 
 .footer__form-button:hover {
@@ -308,14 +303,17 @@ body {
 }
 
 .footer__registration-button {
-  width: 200px;
+  padding: 12px 24px;
   margin-top: 12px;
-  padding: 10px 20px;
   background: #ffffff;
   color: #000000;
   border: 2px solid #6c63a0;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  max-width: 200px;
+  align-self: center;
 }
 
 .footer__registration-button:hover {
@@ -362,17 +360,15 @@ body {
 }
 
 .footer__copyright {
-  max-width: 1110px;
-  margin: 20px auto 0;
   text-align: center;
-  transform: translateX(30px);
+  margin-top: 25px;
   font-size: 13px;
   opacity: 0.6;
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 40px 20px 20px;
+    padding: 30px 20px 20px;
   }
 
   .footer__container {
@@ -389,14 +385,6 @@ body {
 
   .footer__subscribe {
     align-items: stretch;
-  }
-
-  .footer__subscribe-text {
-    text-align: center;
-  }
-
-  .footer__form-row {
-    width: 100%;
   }
 
   .footer__registration-button {

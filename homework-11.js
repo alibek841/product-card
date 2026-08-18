@@ -1,4 +1,4 @@
-// ===== ФОРМА ПОДПИСКИ В ФУТЕРЕ =====
+// ===== Форма подписки в футере =====
 const form = document.querySelector(".footer__form");
 const emailInput = document.querySelector(".footer__form-input");
 
@@ -6,32 +6,34 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (!form.checkValidity()) {
-    return;
+    return; 
   }
 
   const email = emailInput.value;
   console.log({ email });
 });
 
-//  модальное окно
+// ===== Модальное окно =====
 const registrationButton = document.getElementById("registrationButton");
 const closeModalButton = document.getElementById("closeModalButton");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
+// Открытие модалки
 registrationButton.addEventListener("click", () => {
   modal.classList.add("modal-showed");
   overlay.classList.add("modal-showed");
 });
 
+// Закрытие модалки крестиком
 closeModalButton.addEventListener("click", () => {
   modal.classList.remove("modal-showed");
   overlay.classList.remove("modal-showed");
 });
 
-  //  форма регистрации             
+// ===== Форма регистрации внутри модалки =====
 const registrationForm = document.querySelector(".registration-form");
-let user;
+let user; // внешняя переменная
 
 registrationForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -52,18 +54,18 @@ registrationForm.addEventListener("submit", (event) => {
     return;
   }
 
-  //  автоматический сбор полей
+  //  Объект пользователя
   user = {
-    ...Object.fromEntries(formData.entries()),
-    createdOn: new Date()                     
-	};
-  // удаляем поле repeatPassword 
-  delete user.repeatPassword;
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    birthDate: formData.get("birthDate"),
+    login: formData.get("login"),
+    password: password,
+    createdOn: new Date() 
+  };
 
-  //  Вывод в консоль
   console.log(user);
-
-  //  Очистка формы и закрытие модалки
+  //  Очищение формы и закрытие модалки
   registrationForm.reset();
   modal.classList.remove("modal-showed");
   overlay.classList.remove("modal-showed");
