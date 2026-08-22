@@ -130,77 +130,75 @@
   </footer>
 
   <div class="overlay"></div>
-  <div class="modal">
-    <button class="modal__close" id="closeModalButton">&times;</button>
-    <h2 class="modal__title">Регистрация</h2>
-    <form class="registration-form">
+  <div class="modal" id="registrationModal">
+    <form class="registration-form" id="registrationForm" novalidate>
+      <button class="modal__close" id="closeModalButton">&times;</button>
+      <h2 class="modal__title">Регистрация</h2>
+      <form class="registration-form">
 
-      <label for="firstName">Имя</label>
-      <input
-        type="text"
-        id="firstName"
-        name="firstName"
-        placeholder="Введите имя"
-        required
-      >
+        <label for="firstName">Имя</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="Введите имя"
+          required
+        >
 
-      <label for="lastName">Фамилия</label>
-      <input
-        type="text"
-        id="lastName"
-        name="lastName"
-        placeholder="Введите фамилию"
-        required
-      >
+        <label for="lastName">Фамилия</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Введите фамилию"
+          required
+        >
 
-      <label for="birthDate">Дата рождения</label>
-      <input
-        type="date"
-        id="birthDate"
-        name="birthDate"
-        required
-      >
+        <label for="birthDate">Дата рождения</label>
+        <input
+          type="date"
+          id="birthDate"
+          name="birthDate"
+          required
+        >
 
-      <label for="login">Логин</label>
-      <input
-        type="text"
-        id="login"
-        name="login"
-        placeholder="Введите логин"
-        required
-      >
+        <label for="login">Логин</label>
+        <input
+          type="text"
+          id="login"
+          name="login"
+          placeholder="Введите логин"
+          required
+        >
 
-      <label for="password">Пароль</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Введите пароль"
-        required
-        minlength="6"
-      >
+        <label for="password">Пароль</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Введите пароль"
+          required
+          minlength="6"
+       >
 
-      <label for="repeatPassword">Повторите пароль</label>
-      <input
-        type="password"
-        id="repeatPassword"
-        name="repeatPassword"
-        placeholder="Повторите пароль"
-        required
-        minlength="6"
-      >
+        <label for="repeatPassword">Повторите пароль</label>
+        <input
+          type="password"
+          id="repeatPassword"
+          name="repeatPassword"
+          placeholder="Повторите пароль"
+          required
+          minlength="6"
+        >
+
 
       <button type="submit">Зарегистрироваться</button>
 
     </form>
   </div>
 
-  <script src="main.js"></script>
-  <script src="homework-7.js"></script>
-  <script src="homework-8.js"></script>
-  <script type="module" src="./homework-9.js"></script>
-  <script type="module" src="./homework-10.js"></script>
-  <script type="module" src="./homework-11.js"></script>
+  <script type="module" src="./main.js"></script>
+ 
 </body>
 
 </html>
