@@ -1,5 +1,15 @@
 import "./homework-10.js";
 
+import { Modal } from "./Modal.js";
+import { Form } from "./Form.js";
+import { Car } from "./Car.js";
+import { Bike } from "./Bike.js";
+
+import { Coffee } from "./Coffee.js";
+import { Tea } from "./Tea.js";
+import { Lemonade } from "./Lemonade.js";
+import { Cafe } from "./Cafe.js";
+
 // Первая карточка
 const firstCard = document.querySelector('.card');
 const changeColorBtnCard = document.getElementById('change_color_btn_card');
@@ -55,11 +65,6 @@ outputConsoleLogButton.addEventListener('click', () => {
 
 
 // ДЗ № 12
-
-import { Modal } from "./Modal.js";
-import { Form } from "./Form.js";
-import { Car } from "./Car.js";
-import { Bike } from "./Bike.js";
 
 // Проверка классов
 const myCar = new Car("Toyota", "Camry", 2020, 4);
@@ -119,16 +124,7 @@ subscribeForm?.addEventListener("submit", (event) => {
     console.log({ email });
 });
 
-
-
 //  ДЗ № 13
-
-
-import { Coffee } from "./Coffee.js";
-import { Tea } from "./Tea.js";
-import { Lemonade } from "./Lemonade.js";
-import { Cafe } from "./Cafe.js";
-
 
 const cafe = new Cafe("Альбина", "ул. Садовая, 10");
 
