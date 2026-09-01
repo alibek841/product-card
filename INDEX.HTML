@@ -130,10 +130,10 @@
   </footer>
 
   <div class="overlay"></div>
-  <div class="modal">
+  <div class="modal" id="registrationModal">
     <button class="modal__close" id="closeModalButton">&times;</button>
     <h2 class="modal__title">Регистрация</h2>
-    <form class="registration-form">
+    <form class="registration-form" id="registrationForm" novalidate>
 
       <label for="firstName">Имя</label>
       <input
@@ -190,17 +190,14 @@
         minlength="6"
       >
 
-      <button type="submit">Зарегистрироваться</button>
+
+    <button type="submit">Зарегистрироваться</button>
 
     </form>
   </div>
 
-  <script src="main.js"></script>
-  <script src="homework-7.js"></script>
-  <script src="homework-8.js"></script>
-  <script type="module" src="./homework-9.js"></script>
-  <script type="module" src="./homework-10.js"></script>
-  <script type="module" src="./homework-11.js"></script>
+  <script type="module" src="./main.js"></script>
+ 
 </body>
 
 </html>

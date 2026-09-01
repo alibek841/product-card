@@ -50,3 +50,69 @@ outputConsoleLogButton.addEventListener('click', () => {
   console.log('Ассаляму алейкум');
   alert('Ассаляму алейкум');
 });
+
+
+// ДЗ № 12
+
+import { Modal } from "./Modal.js";
+import { Form } from "./Form.js";
+import { Car } from "./Car.js";
+import { Bike } from "./Bike.js";
+
+// Проверка классов
+const myCar = new Car("Toyota", "Camry", 2020, 4);
+console.log(myCar.getInfo());
+
+const myBike = new Bike("Harley", "Sportster", 2019, "cruiser");
+console.log(myBike.getInfo());
+
+// Модалка через класс Modal
+const modal = new Modal("registrationModal");
+const registrationButton = document.getElementById("registrationButton");
+
+registrationButton?.addEventListener("click", () => modal.open());
+
+// Форма через класс Form
+const registrationForm = new Form("registrationForm");
+
+document.getElementById("registrationForm")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!registrationForm.isValid()) {
+        return;
+    }
+
+    const formData = registrationForm.getValues();
+    const password = formData.password;
+    const repeatPassword = formData.repeatPassword;
+
+    if (password !== repeatPassword) {
+        alert("Регистрация отклонена: пароли не совпадают");
+        return;
+    }
+
+    const user = {
+        ...formData,
+        createdOn: new Date()
+    };
+    delete user.repeatPassword;
+
+    console.log(user);
+    registrationForm.reset();
+    modal.close();
+});
+
+//  Форма подписки 
+const subscribeForm = document.querySelector(".footer__form");
+const emailInput = document.querySelector(".footer__form-input");
+
+subscribeForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!subscribeForm.checkValidity()) {
+        return;
+    }
+
+    const email = emailInput.value;
+    console.log({ email });
+});
