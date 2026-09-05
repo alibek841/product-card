@@ -1,3 +1,15 @@
+import "./homework-10.js";
+
+import { Modal } from "./Modal.js";
+import { Form } from "./Form.js";
+import { Car } from "./Car.js";
+import { Bike } from "./Bike.js";
+
+import { Coffee } from "./Coffee.js";
+import { Tea } from "./Tea.js";
+import { Lemonade } from "./Lemonade.js";
+import { Cafe } from "./Cafe.js";
+
 // Первая карточка
 const firstCard = document.querySelector('.card');
 const changeColorBtnCard = document.getElementById('change_color_btn_card');
@@ -53,11 +65,6 @@ outputConsoleLogButton.addEventListener('click', () => {
 
 
 // ДЗ № 12
-
-import { Modal } from "./Modal.js";
-import { Form } from "./Form.js";
-import { Car } from "./Car.js";
-import { Bike } from "./Bike.js";
 
 // Проверка классов
 const myCar = new Car("Toyota", "Camry", 2020, 4);
@@ -116,3 +123,25 @@ subscribeForm?.addEventListener("submit", (event) => {
     const email = emailInput.value;
     console.log({ email });
 });
+
+//  ДЗ № 13
+
+const cafe = new Cafe("Альбина", "ул. Садовая, 10");
+
+
+const espresso = new Coffee("Эспрессо", "маленький", 150, "Арабика");
+const latte = new Coffee("Латте", "средний", 250, "Арабика", "овсяное");
+const greenTea = new Tea("Зелёный чай", "средний", 120, "зелёный", false);
+const lemonade = new Lemonade("Лимонад", "большой", 180, "лимон", true);
+
+
+console.log(cafe.getInfo());
+
+
+cafe.orderDrink(espresso);
+cafe.orderDrink(latte);
+cafe.orderDrink(greenTea);
+cafe.orderDrink(lemonade);
+
+
+cafe.showOrders();
