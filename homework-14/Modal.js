@@ -1,4 +1,7 @@
 export class Modal {
+
+	#closeHandler
+	
   constructor(modalId, buttonId, shouldCloseOnOverlay) {
     this.modal = document.getElementById(modalId);
     this.overlay = document.getElementById('overlay');
@@ -14,8 +17,6 @@ export class Modal {
     this.button = document.getElementById(buttonId);
     this.#initOpen();
   }
-
-  #closeHandler = null;
 
   open() {
     this.modal.classList.add('modal-showed');
