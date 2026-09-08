@@ -1,6 +1,6 @@
 export class Modal {
 
-	#closeHandler
+
 	
   constructor(modalId, buttonId, shouldCloseOnOverlay) {
     this.modal = document.getElementById(modalId);
