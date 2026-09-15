@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Алибек",
+      "surname": "Вагабов",
+      "email": "alibek@mail.com",
+      "age": 39,
+      "city": "Хасавюрт"
+    },
+    {
+      "id": 2,
+      "name": "Мухаммад",
+      "surname": "Ибрагимов",
+      "email": "muhammad@mail.com",
+      "age": 25,
+      "city": "Махачкала"
+    },
+    {
+      "id": 3,
+      "name": "Ахмад",
+      "surname": "Магомедов",
+      "email": "ahmad@mail.com",
+      "age": 31,
+      "city": "Грозный"
+    },
+    {
+      "id": 4,
+      "name": "Ислам",
+      "surname": "Алиев",
+      "email": "islam@mail.com",
+      "age": 28,
+      "city": "Хасавюрт"
+    },
+    {
+      "id": 5,
+      "name": "Юсуф",
+      "surname": "Омаров",
+      "email": "yusuf@mail.com",
+      "age": 35,
+      "city": "Дербент"
+    }
+  ]
+}
