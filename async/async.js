@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'users_data';
+const USERS_STORAGE_KEY = 'users_data';
 
 const statusEl = document.getElementById('status');
 const usersEl = document.getElementById('users');
@@ -9,28 +9,30 @@ const deleteAllBtn = document.getElementById('deleteAllBtn');
 let users = [];
 
 async function init() {
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = localStorage.getItem(USERS_STORAGE_KEY);
 
   if (stored) {
-  
-    users = JSON.parse(stored);
-    renderUsers();
-    showControls();
-    hideStatus();
-  } else {
-    
-    showStatus('Данные загружаются...');
-    try {
-      const data = await fetchUsers();
-      users = data.users;
-      saveToStorage();
-      renderUsers();
+    const parsed = JSON.parse(stored);
+    if (parsed.length > 0) {
+      users = parsed;
+      renderUsers(users);
       showControls();
       hideStatus();
-    } catch (error) {
-      showStatus('Ошибка при загрузке данных', true);
-      console.error(error);
+      return;
     }
+  }
+
+  showStatus('Данные загружаются...');
+  try {
+    const data = await fetchUsers();
+    users = data.users;
+    saveToStorage();
+    renderUsers(users);
+    showControls();
+    hideStatus();
+  } catch (error) {
+    showStatus('Ошибка при загрузке данных', true);
+    console.error(error);
   }
 }
 
@@ -42,29 +44,27 @@ function fetchUsers() {
         if (!response.ok) {
           throw new Error('Не удалось загрузить данные');
         }
-        const data = await response.json();
-        resolve(data);
+        resolve(await response.json());
       } catch (error) {
         reject(new Error('Ошибка сети: ' + error.message));
       }
-    }, 2000); 
+    }, 2000);
   });
 }
 
 function saveToStorage() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
+  localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
 }
 
-function renderUsers() {
+function renderUsers(usersArray) {
   usersEl.innerHTML = '';
 
-  if (users.length === 0) {
-    statusEl.textContent = 'Нет пользователей';
-    statusEl.style.display = 'block';
+  if (usersArray.length === 0) {
+    showStatus('Нет пользователей');
     return;
   }
 
-  users.forEach(user => {
+  usersArray.forEach(user => {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
@@ -77,7 +77,6 @@ function renderUsers() {
     usersEl.appendChild(card);
   });
 
-
   document.querySelectorAll('.delete-card').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = Number(e.target.dataset.id);
@@ -89,11 +88,7 @@ function renderUsers() {
 function deleteUser(id) {
   users = users.filter(user => user.id !== id);
   saveToStorage();
-  renderUsers();
-
-  if (users.length === 0) {
-    showStatus('Все пользователи удалены');
-  }
+  renderUsers(users);
 }
 
 function deleteAllUsers() {
@@ -103,7 +98,7 @@ function deleteAllUsers() {
   }
   users = [];
   saveToStorage();
-  renderUsers();
+  renderUsers(users);
   showStatus('Все пользователи удалены');
 }
 
@@ -112,7 +107,7 @@ function getAllUsers() {
     showStatus('Нет пользователей для отображения');
     return;
   }
-  renderUsers();
+  renderUsers(users);
   showStatus(`Отображено пользователей: ${users.length}`);
 }
 
@@ -133,6 +128,5 @@ function showControls() {
 
 getAllBtn.addEventListener('click', getAllUsers);
 deleteAllBtn.addEventListener('click', deleteAllUsers);
-
 
 init();
