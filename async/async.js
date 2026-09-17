@@ -5,16 +5,17 @@ const usersEl = document.getElementById('users');
 const controlsEl = document.getElementById('controls');
 const getAllBtn = document.getElementById('getAllBtn');
 const deleteAllBtn = document.getElementById('deleteAllBtn');
+const cardTemplate = document.getElementById('user-card-template');
 
 let users = [];
 
 async function init() {
-  const stored = localStorage.getItem(USERS_STORAGE_KEY);
+  const storedUsers = localStorage.getItem(USERS_STORAGE_KEY);
 
-  if (stored) {
-    const parsed = JSON.parse(stored);
-    if (parsed.length > 0) {
-      users = parsed;
+  if (storedUsers) {
+    const parsedUsers = JSON.parse(storedUsers);
+    if (parsedUsers.length > 0) {
+      users = parsedUsers;
       renderUsers(users);
       showControls();
       hideStatus();
@@ -24,8 +25,8 @@ async function init() {
 
   showStatus('Данные загружаются...');
   try {
-    const data = await fetchUsers();
-    users = data.users;
+    const responseData = await fetchUsers();
+    users = responseData.users;
     saveToStorage();
     renderUsers(users);
     showControls();
@@ -65,15 +66,14 @@ function renderUsers(usersArray) {
   }
 
   usersArray.forEach(user => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <button class="delete-card" data-id="${user.id}">✕</button>
-      <h3>${user.name} ${user.surname}</h3>
-      <p>📧 ${user.email}</p>
-      <p>🎂 Возраст: ${user.age}</p>
-      <p>📍 ${user.city || 'Не указан'}</p>
-    `;
+    const card = cardTemplate.content.cloneNode(true);
+
+    card.querySelector('.delete-card').dataset.id = user.id;
+    card.querySelector('.card__name').textContent = `${user.name} ${user.surname}`;
+    card.querySelector('.card__email').textContent = `📧 ${user.email}`;
+    card.querySelector('.card__age').textContent = `🎂 Возраст: ${user.age}`;
+    card.querySelector('.card__city').textContent = `📍 ${user.city || 'Не указан'}`;
+
     usersEl.appendChild(card);
   });
 
